@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ForYouSis</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize.-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+    <!-- App -->
+    <script type="text/html/javascript" src="app.js"></script>
+</head>
+
+<body ng-app="instafeed">
+    <section ng-controller="ShowImages as images">
+            <div class="container" >  
+             	<h3 class="center" style="color: #ef5350;">#ForYouSis</h3>
+                <center><h6 style="color: #ef5350;" >Show Instagram Feed</h6></center>
+                <br /><br />
+                <a class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <ul ng-show="layout == 'grid'" class="grid">
+                        <li ng-repeat="p in pics | limitTo:quantity ">
+                            <a href="{{p.link}}" target="_blank">
+                                <div class="col s4"><img ng-src="{{p.images.low_resolution.url}}"/> 
+                                <br /><br /><br />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+<footer class="page-footer red lighten-1">
+    <div class="footer-copyright">
+     	<div class="container" style="color: ##ffffff;">
+     		© ForYouSis | Todos os direitos reservados 
+         </div>
+    </div>
+</footer>
+    <script src="scripts/app.js"></script>
+    <script src="bower_components/angular-instagram-api-factory/src/angular-instagram-api-factory.min.js"></script>
+</body>
+</html>
