@@ -31,7 +31,7 @@
   }]);
 
 //display images, limit to 9 photos
-  app.controller('ShowImages', function($scope, InstagramAPI) {
+  app.controller('Images', function($scope, InstagramAPI) {
     $scope.layout = 'grid';
     $scope.data = {};
     $scope.pics = [];
